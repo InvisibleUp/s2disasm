@@ -11889,7 +11889,7 @@ LevelSelect_Return:
 ; Level Select Level Order
 
 ; One entry per item in the level select menu. Just set the value for the item
-; you want to link to the level/act number of the level you want to load when
+; you want to link to the levels/act number of the level you want to load when
 ; the player selects that item.
 ; -----------------------------------------------------------------------------
 ;Misc_9454:
@@ -14170,39 +14170,39 @@ LevelSize: zoneOrderedTable 2,8	; WrdArr_LvlSize
 ; appear at when the level starts.
 ; --------------------------------------------------------------------------------------
 StartLocations: zoneOrderedTable 2,4	; WrdArr_StartLoc
-	zoneTableBinEntry	2, "startpos/EHZ_1.bin"	; $00
-	zoneTableBinEntry	2, "startpos/EHZ_2.bin"
+	zoneTableBinEntry	2, "levels/startpos/EHZ_1.bin"	; $00
+	zoneTableBinEntry	2, "levels/startpos/EHZ_2.bin"
 	zoneTableEntry.w	$60,	$28F		; $01
 	zoneTableEntry.w	$60,	$2AF
 	zoneTableEntry.w	$60,	$1AC		; $02
 	zoneTableEntry.w	$60,	$1AC
 	zoneTableEntry.w	$60,	$28F		; $03
 	zoneTableEntry.w	$60,	$2AF
-	zoneTableBinEntry	2, "startpos/MTZ_1.bin"	; $04
-	zoneTableBinEntry	2, "startpos/MTZ_2.bin"
-	zoneTableBinEntry	2, "startpos/MTZ_3.bin"	; $05
+	zoneTableBinEntry	2, "levels/startpos/MTZ_1.bin"	; $04
+	zoneTableBinEntry	2, "levels/startpos/MTZ_2.bin"
+	zoneTableBinEntry	2, "levels/startpos/MTZ_3.bin"	; $05
 	zoneTableEntry.w	$60,	$2AF
-	zoneTableBinEntry	2, "startpos/WFZ.bin"	; $06
+	zoneTableBinEntry	2, "levels/startpos/WFZ.bin"	; $06
 	zoneTableEntry.w	$1E0,	$4CC
-	zoneTableBinEntry	2, "startpos/HTZ_1.bin"	; $07
-	zoneTableBinEntry	2, "startpos/HTZ_2.bin"
+	zoneTableBinEntry	2, "levels/startpos/HTZ_1.bin"	; $07
+	zoneTableBinEntry	2, "levels/startpos/HTZ_2.bin"
 	zoneTableEntry.w	$230,	$1AC		; $08
 	zoneTableEntry.w	$230,	$1AC
 	zoneTableEntry.w	$60,	$28F		; $09
 	zoneTableEntry.w	$60,	$2AF
-	zoneTableBinEntry	2, "startpos/OOZ_1.bin"	; $0A
-	zoneTableBinEntry	2, "startpos/OOZ_2.bin"
-	zoneTableBinEntry	2, "startpos/MCZ_1.bin"	; $0B
-	zoneTableBinEntry	2, "startpos/MCZ_2.bin"
-	zoneTableBinEntry	2, "startpos/CNZ_1.bin"	; $0C
-	zoneTableBinEntry	2, "startpos/CNZ_2.bin"
-	zoneTableBinEntry	2, "startpos/CPZ_1.bin"	; $0D
-	zoneTableBinEntry	2, "startpos/CPZ_2.bin"
-	zoneTableBinEntry	2, "startpos/DEZ.bin"	; $0E
+	zoneTableBinEntry	2, "levels/startpos/OOZ_1.bin"	; $0A
+	zoneTableBinEntry	2, "levels/startpos/OOZ_2.bin"
+	zoneTableBinEntry	2, "levels/startpos/MCZ_1.bin"	; $0B
+	zoneTableBinEntry	2, "levels/startpos/MCZ_2.bin"
+	zoneTableBinEntry	2, "levels/startpos/CNZ_1.bin"	; $0C
+	zoneTableBinEntry	2, "levels/startpos/CNZ_2.bin"
+	zoneTableBinEntry	2, "levels/startpos/CPZ_1.bin"	; $0D
+	zoneTableBinEntry	2, "levels/startpos/CPZ_2.bin"
+	zoneTableBinEntry	2, "levels/startpos/DEZ.bin"	; $0E
 	zoneTableEntry.w	$60,	$12D
-	zoneTableBinEntry	2, "startpos/ARZ_1.bin"	; $0F
-	zoneTableBinEntry	2, "startpos/ARZ_2.bin"
-	zoneTableBinEntry	2, "startpos/SCZ.bin"	; $10
+	zoneTableBinEntry	2, "levels/startpos/ARZ_1.bin"	; $0F
+	zoneTableBinEntry	2, "levels/startpos/ARZ_2.bin"
+	zoneTableBinEntry	2, "levels/startpos/SCZ.bin"	; $10
 	zoneTableEntry.w	$140,	$70
     zoneTableEnd
 
@@ -25792,7 +25792,7 @@ loc_142E2:
 ; -------------------------------------------------------------------------------
 ; Main game level order
 
-; One value per act. That value is the level/act number of the level to load when
+; One value per act. That value is the levels/act number of the level to load when
 ; that act finishes.
 ; -------------------------------------------------------------------------------
 ;word_142F8:
@@ -30184,8 +30184,8 @@ loc_177FA:
 	; marker, meaning the game could potentially read past the start
 	; of the file and load random bumpers.
 	;dc.w	$0000, $0000, $0000
-SpecialCNZBumpers_Act1:	BINCLUDE	"level/objects/CNZ 1 bumpers.bin"	; byte_1781A
-SpecialCNZBumpers_Act2:	BINCLUDE	"level/objects/CNZ 2 bumpers.bin"	; byte_1795E
+SpecialCNZBumpers_Act1:	BINCLUDE	"levels/objects/CNZ 1 bumpers.bin"	; byte_1781A
+SpecialCNZBumpers_Act2:	BINCLUDE	"levels/objects/CNZ 2 bumpers.bin"	; byte_1795E
 ; ===========================================================================
 
     if gameRevision<2
@@ -30955,22 +30955,22 @@ ObjectLayoutBoundary macro
 
 ; byte_1802A;
     if gameRevision=0
-Objects_CNZ1_2P:	BINCLUDE	"level/objects/CNZ_1_2P (REV00).bin"
+Objects_CNZ1_2P:	BINCLUDE	"levels/objects/CNZ_1_2P (REV00).bin"
     else
     ; a Crawl badnik was moved slightly further away from a ledge
     ; 2 flippers were moved closer to a wall
-Objects_CNZ1_2P:	BINCLUDE	"level/objects/CNZ_1_2P.bin"
+Objects_CNZ1_2P:	BINCLUDE	"levels/objects/CNZ_1_2P.bin"
     endif
 
 	ObjectLayoutBoundary
 
 ; byte_18492:
     if gameRevision=0
-Objects_CNZ2_2P:	BINCLUDE	"level/objects/CNZ_2_2P (REV00).bin"
+Objects_CNZ2_2P:	BINCLUDE	"levels/objects/CNZ_2_2P (REV00).bin"
     else
     ; 4 Crawl badniks were slightly moved, placing them closer/farther away from ledges
     ; 2 flippers were moved away from a wall to keep players from getting stuck behind them
-Objects_CNZ2_2P:	BINCLUDE	"level/objects/CNZ_2_2P.bin"
+Objects_CNZ2_2P:	BINCLUDE	"levels/objects/CNZ_2_2P.bin"
     endif
 
 	ObjectLayoutBoundary
@@ -86766,88 +86766,88 @@ Off_Level: zoneOrderedOffsetTable 2,2
     zoneTableEnd
 ;---------------------------------------------------------------------------------------
 ; EHZ act 1 level layout (Kosinski compression)
-Level_EHZ1:	BINCLUDE	"level/layout/EHZ_1.bin"
+Level_EHZ1:	BINCLUDE	"levels/layout/EHZ_1.bin"
 	even
 ;---------------------------------------------------------------------------------------
 ; EHZ act 2 level layout (Kosinski compression)
-Level_EHZ2:	BINCLUDE	"level/layout/EHZ_2.bin"
+Level_EHZ2:	BINCLUDE	"levels/layout/EHZ_2.bin"
 	even
 ;---------------------------------------------------------------------------------------
 ; MTZ act 1 level layout (Kosinski compression)
-Level_MTZ1:	BINCLUDE	"level/layout/MTZ_1.bin"
+Level_MTZ1:	BINCLUDE	"levels/layout/MTZ_1.bin"
 	even
 ;---------------------------------------------------------------------------------------
 ; MTZ act 2 level layout (Kosinski compression)
-Level_MTZ2:	BINCLUDE	"level/layout/MTZ_2.bin"
+Level_MTZ2:	BINCLUDE	"levels/layout/MTZ_2.bin"
 	even
 ;---------------------------------------------------------------------------------------
 ; MTZ act 3 level layout (Kosinski compression)
-Level_MTZ3:	BINCLUDE	"level/layout/MTZ_3.bin"
+Level_MTZ3:	BINCLUDE	"levels/layout/MTZ_3.bin"
 	even
 ;---------------------------------------------------------------------------------------
 ; WFZ level layout (Kosinski compression)
-Level_WFZ:	BINCLUDE	"level/layout/WFZ.bin"
+Level_WFZ:	BINCLUDE	"levels/layout/WFZ.bin"
 	even
 ;---------------------------------------------------------------------------------------
 ; HTZ act 1 level layout (Kosinski compression)
-Level_HTZ1:	BINCLUDE	"level/layout/HTZ_1.bin"
+Level_HTZ1:	BINCLUDE	"levels/layout/HTZ_1.bin"
 	even
 ;---------------------------------------------------------------------------------------
 ; HTZ act 2 level layout (Kosinski compression)
-Level_HTZ2:	BINCLUDE	"level/layout/HTZ_2.bin"
+Level_HTZ2:	BINCLUDE	"levels/layout/HTZ_2.bin"
 	even
 ;---------------------------------------------------------------------------------------
 ; HPZ act 1 level layout (Kosinski compression)
-Level_HPZ1:	;BINCLUDE	"level/layout/HPZ_1.bin"
+Level_HPZ1:	;BINCLUDE	"levels/layout/HPZ_1.bin"
 	;even
 ;---------------------------------------------------------------------------------------
 ; OOZ act 1 level layout (Kosinski compression)
-Level_OOZ1:	BINCLUDE	"level/layout/OOZ_1.bin"
+Level_OOZ1:	BINCLUDE	"levels/layout/OOZ_1.bin"
 	even
 ;---------------------------------------------------------------------------------------
 ; OOZ act 2 level layout (Kosinski compression)
-Level_OOZ2:	BINCLUDE	"level/layout/OOZ_2.bin"
+Level_OOZ2:	BINCLUDE	"levels/layout/OOZ_2.bin"
 	even
 ;---------------------------------------------------------------------------------------
 ; MCZ act 1 level layout (Kosinski compression)
-Level_MCZ1:	BINCLUDE	"level/layout/MCZ_1.bin"
+Level_MCZ1:	BINCLUDE	"levels/layout/MCZ_1.bin"
 	even
 ;---------------------------------------------------------------------------------------
 ; MCZ act 2 level layout (Kosinski compression)
-Level_MCZ2:	BINCLUDE	"level/layout/MCZ_2.bin"
+Level_MCZ2:	BINCLUDE	"levels/layout/MCZ_2.bin"
 	even
 ;---------------------------------------------------------------------------------------
 ; CNZ act 1 level layout (Kosinski compression)
-Level_CNZ1:	BINCLUDE	"level/layout/CNZ_1.bin"
+Level_CNZ1:	BINCLUDE	"levels/layout/CNZ_1.bin"
 	even
 ;---------------------------------------------------------------------------------------
 ; CNZ act 2 level layout (Kosinski compression)
-Level_CNZ2:	BINCLUDE	"level/layout/CNZ_2.bin"
+Level_CNZ2:	BINCLUDE	"levels/layout/CNZ_2.bin"
 	even
 ;---------------------------------------------------------------------------------------
 ; CPZ act 1 level layout (Kosinski compression)
-Level_CPZ1:	BINCLUDE	"level/layout/CPZ_1.bin"
+Level_CPZ1:	BINCLUDE	"levels/layout/CPZ_1.bin"
 	even
 ;---------------------------------------------------------------------------------------
 ; CPZ act 2 level layout (Kosinski compression)
-Level_CPZ2:	BINCLUDE	"level/layout/CPZ_2.bin"
+Level_CPZ2:	BINCLUDE	"levels/layout/CPZ_2.bin"
 	even
 ;---------------------------------------------------------------------------------------
 ; DEZ level layout (Kosinski compression)
-Level_DEZ:	BINCLUDE	"level/layout/DEZ.bin"
+Level_DEZ:	BINCLUDE	"levels/layout/DEZ.bin"
 	even
 ;---------------------------------------------------------------------------------------
 ; ARZ act 1 level layout (Kosinski compression)
-Level_ARZ1:	BINCLUDE	"level/layout/ARZ_1.bin"
+Level_ARZ1:	BINCLUDE	"levels/layout/ARZ_1.bin"
 	even
 
 ;---------------------------------------------------------------------------------------
 ; ARZ act 2 level layout (Kosinski compression)
-Level_ARZ2:	BINCLUDE	"level/layout/ARZ_2.bin"
+Level_ARZ2:	BINCLUDE	"levels/layout/ARZ_2.bin"
 	even
 ;---------------------------------------------------------------------------------------
 ; SCZ level layout (Kosinski compression)
-Level_SCZ:	BINCLUDE	"level/layout/SCZ.bin"
+Level_SCZ:	BINCLUDE	"levels/layout/SCZ.bin"
 	even
 
 
@@ -88399,40 +88399,40 @@ Off_Rings: zoneOrderedOffsetTable 2,2
 	zoneOffsetTableEntry.w  Rings_SCZ_2	; 33
     zoneTableEnd
 
-Rings_EHZ_1:	BINCLUDE	"level/rings/EHZ_1.bin"
-Rings_EHZ_2:	BINCLUDE	"level/rings/EHZ_2.bin"
-Rings_Lev1_1:	BINCLUDE	"level/rings/01_1.bin"
-Rings_Lev1_2:	BINCLUDE	"level/rings/01_2.bin"
-Rings_Lev2_1:	BINCLUDE	"level/rings/02_1.bin"
-Rings_Lev2_2:	BINCLUDE	"level/rings/02_2.bin"
-Rings_Lev3_1:	BINCLUDE	"level/rings/03_1.bin"
-Rings_Lev3_2:	BINCLUDE	"level/rings/03_2.bin"
-Rings_MTZ_1:	BINCLUDE	"level/rings/MTZ_1.bin"
-Rings_MTZ_2:	BINCLUDE	"level/rings/MTZ_2.bin"
-Rings_MTZ_3:	BINCLUDE	"level/rings/MTZ_3.bin"
-Rings_MTZ_4:	BINCLUDE	"level/rings/MTZ_4.bin"
-Rings_HTZ_1:	BINCLUDE	"level/rings/HTZ_1.bin"
-Rings_HTZ_2:	BINCLUDE	"level/rings/HTZ_2.bin"
-Rings_HPZ_1:	BINCLUDE	"level/rings/HPZ_1.bin"
-Rings_HPZ_2:	BINCLUDE	"level/rings/HPZ_2.bin"
-Rings_Lev9_1:	BINCLUDE	"level/rings/09_1.bin"
-Rings_Lev9_2:	BINCLUDE	"level/rings/09_2.bin"
-Rings_OOZ_1:	BINCLUDE	"level/rings/OOZ_1.bin"
-Rings_OOZ_2:	BINCLUDE	"level/rings/OOZ_2.bin"
-Rings_MCZ_1:	BINCLUDE	"level/rings/MCZ_1.bin"
-Rings_MCZ_2:	BINCLUDE	"level/rings/MCZ_2.bin"
-Rings_CNZ_1:	BINCLUDE	"level/rings/CNZ_1.bin"
-Rings_CNZ_2:	BINCLUDE	"level/rings/CNZ_2.bin"
-Rings_CPZ_1:	BINCLUDE	"level/rings/CPZ_1.bin"
-Rings_CPZ_2:	BINCLUDE	"level/rings/CPZ_2.bin"
-Rings_DEZ_1:	BINCLUDE	"level/rings/DEZ_1.bin"
-Rings_DEZ_2:	BINCLUDE	"level/rings/DEZ_2.bin"
-Rings_WFZ_1:	BINCLUDE	"level/rings/WFZ_1.bin"
-Rings_WFZ_2:	BINCLUDE	"level/rings/WFZ_2.bin"
-Rings_ARZ_1:	BINCLUDE	"level/rings/ARZ_1.bin"
-Rings_ARZ_2:	BINCLUDE	"level/rings/ARZ_2.bin"
-Rings_SCZ_1:	BINCLUDE	"level/rings/SCZ_1.bin"
-Rings_SCZ_2:	BINCLUDE	"level/rings/SCZ_2.bin"
+Rings_EHZ_1:	BINCLUDE	"levels/rings/EHZ_1.bin"
+Rings_EHZ_2:	BINCLUDE	"levels/rings/EHZ_2.bin"
+Rings_Lev1_1:	BINCLUDE	"levels/rings/01_1.bin"
+Rings_Lev1_2:	BINCLUDE	"levels/rings/01_2.bin"
+Rings_Lev2_1:	BINCLUDE	"levels/rings/02_1.bin"
+Rings_Lev2_2:	BINCLUDE	"levels/rings/02_2.bin"
+Rings_Lev3_1:	BINCLUDE	"levels/rings/03_1.bin"
+Rings_Lev3_2:	BINCLUDE	"levels/rings/03_2.bin"
+Rings_MTZ_1:	BINCLUDE	"levels/rings/MTZ_1.bin"
+Rings_MTZ_2:	BINCLUDE	"levels/rings/MTZ_2.bin"
+Rings_MTZ_3:	BINCLUDE	"levels/rings/MTZ_3.bin"
+Rings_MTZ_4:	BINCLUDE	"levels/rings/MTZ_4.bin"
+Rings_HTZ_1:	BINCLUDE	"levels/rings/HTZ_1.bin"
+Rings_HTZ_2:	BINCLUDE	"levels/rings/HTZ_2.bin"
+Rings_HPZ_1:	BINCLUDE	"levels/rings/HPZ_1.bin"
+Rings_HPZ_2:	BINCLUDE	"levels/rings/HPZ_2.bin"
+Rings_Lev9_1:	BINCLUDE	"levels/rings/09_1.bin"
+Rings_Lev9_2:	BINCLUDE	"levels/rings/09_2.bin"
+Rings_OOZ_1:	BINCLUDE	"levels/rings/OOZ_1.bin"
+Rings_OOZ_2:	BINCLUDE	"levels/rings/OOZ_2.bin"
+Rings_MCZ_1:	BINCLUDE	"levels/rings/MCZ_1.bin"
+Rings_MCZ_2:	BINCLUDE	"levels/rings/MCZ_2.bin"
+Rings_CNZ_1:	BINCLUDE	"levels/rings/CNZ_1.bin"
+Rings_CNZ_2:	BINCLUDE	"levels/rings/CNZ_2.bin"
+Rings_CPZ_1:	BINCLUDE	"levels/rings/CPZ_1.bin"
+Rings_CPZ_2:	BINCLUDE	"levels/rings/CPZ_2.bin"
+Rings_DEZ_1:	BINCLUDE	"levels/rings/DEZ_1.bin"
+Rings_DEZ_2:	BINCLUDE	"levels/rings/DEZ_2.bin"
+Rings_WFZ_1:	BINCLUDE	"levels/rings/WFZ_1.bin"
+Rings_WFZ_2:	BINCLUDE	"levels/rings/WFZ_2.bin"
+Rings_ARZ_1:	BINCLUDE	"levels/rings/ARZ_1.bin"
+Rings_ARZ_2:	BINCLUDE	"levels/rings/ARZ_2.bin"
+Rings_SCZ_1:	BINCLUDE	"levels/rings/SCZ_1.bin"
+Rings_SCZ_2:	BINCLUDE	"levels/rings/SCZ_2.bin"
 
 ; --------------------------------------------------------------------------------------
 ; Filler (free space) (unnecessary; could be replaced with "even")
@@ -88481,80 +88481,80 @@ Off_Objects: zoneOrderedOffsetTable 2,2
 
 	; These things act as boundaries for the object layout parser, so it doesn't read past the end/beginning of the file
 	ObjectLayoutBoundary
-Objects_EHZ_1:	BINCLUDE	"level/objects/EHZ_1.bin"
+Objects_EHZ_1:	BINCLUDE	"levels/objects/EHZ_1.bin"
 	ObjectLayoutBoundary
 
     if gameRevision=0
 ; A collision switcher was improperly placed
-Objects_EHZ_2:	BINCLUDE	"level/objects/EHZ_2 (REV00).bin"
+Objects_EHZ_2:	BINCLUDE	"levels/objects/EHZ_2 (REV00).bin"
     else
-Objects_EHZ_2:	BINCLUDE	"level/objects/EHZ_2.bin"
+Objects_EHZ_2:	BINCLUDE	"levels/objects/EHZ_2.bin"
     endif
 
 	ObjectLayoutBoundary
-Objects_MTZ_1:	BINCLUDE	"level/objects/MTZ_1.bin"
+Objects_MTZ_1:	BINCLUDE	"levels/objects/MTZ_1.bin"
 	ObjectLayoutBoundary
-Objects_MTZ_2:	BINCLUDE	"level/objects/MTZ_2.bin"
+Objects_MTZ_2:	BINCLUDE	"levels/objects/MTZ_2.bin"
 	ObjectLayoutBoundary
-Objects_MTZ_3:	BINCLUDE	"level/objects/MTZ_3.bin"
+Objects_MTZ_3:	BINCLUDE	"levels/objects/MTZ_3.bin"
 	ObjectLayoutBoundary
 
     if gameRevision=0
 ; The lampposts were bugged: their 'remember state' flags weren't set
-Objects_WFZ_1:	BINCLUDE	"level/objects/WFZ_1 (REV00).bin"
+Objects_WFZ_1:	BINCLUDE	"levels/objects/WFZ_1 (REV00).bin"
     else
-Objects_WFZ_1:	BINCLUDE	"level/objects/WFZ_1.bin"
+Objects_WFZ_1:	BINCLUDE	"levels/objects/WFZ_1.bin"
     endif
 
 	ObjectLayoutBoundary
-Objects_WFZ_2:	BINCLUDE	"level/objects/WFZ_2.bin"
+Objects_WFZ_2:	BINCLUDE	"levels/objects/WFZ_2.bin"
 	ObjectLayoutBoundary
-Objects_HTZ_1:	BINCLUDE	"level/objects/HTZ_1.bin"
+Objects_HTZ_1:	BINCLUDE	"levels/objects/HTZ_1.bin"
 	ObjectLayoutBoundary
-Objects_HTZ_2:	BINCLUDE	"level/objects/HTZ_2.bin"
+Objects_HTZ_2:	BINCLUDE	"levels/objects/HTZ_2.bin"
 	ObjectLayoutBoundary
-Objects_HPZ_1:	BINCLUDE	"level/objects/HPZ_1.bin"
+Objects_HPZ_1:	BINCLUDE	"levels/objects/HPZ_1.bin"
 	ObjectLayoutBoundary
-Objects_HPZ_2:	BINCLUDE	"level/objects/HPZ_2.bin"
+Objects_HPZ_2:	BINCLUDE	"levels/objects/HPZ_2.bin"
 	ObjectLayoutBoundary
 	; Oddly, there's a gap for another layout here
 	ObjectLayoutBoundary
-Objects_OOZ_1:	BINCLUDE	"level/objects/OOZ_1.bin"
+Objects_OOZ_1:	BINCLUDE	"levels/objects/OOZ_1.bin"
 	ObjectLayoutBoundary
-Objects_OOZ_2:	BINCLUDE	"level/objects/OOZ_2.bin"
+Objects_OOZ_2:	BINCLUDE	"levels/objects/OOZ_2.bin"
 	ObjectLayoutBoundary
-Objects_MCZ_1:	BINCLUDE	"level/objects/MCZ_1.bin"
+Objects_MCZ_1:	BINCLUDE	"levels/objects/MCZ_1.bin"
 	ObjectLayoutBoundary
-Objects_MCZ_2:	BINCLUDE	"level/objects/MCZ_2.bin"
+Objects_MCZ_2:	BINCLUDE	"levels/objects/MCZ_2.bin"
 	ObjectLayoutBoundary
 
     if gameRevision=0
 ; The signposts are too low, causing them to poke out the bottom of the ground
-Objects_CNZ_1:	BINCLUDE	"level/objects/CNZ_1 (REV00).bin"
+Objects_CNZ_1:	BINCLUDE	"levels/objects/CNZ_1 (REV00).bin"
 	ObjectLayoutBoundary
-Objects_CNZ_2:	BINCLUDE	"level/objects/CNZ_2 (REV00).bin"
+Objects_CNZ_2:	BINCLUDE	"levels/objects/CNZ_2 (REV00).bin"
     else
-Objects_CNZ_1:	BINCLUDE	"level/objects/CNZ_1.bin"
+Objects_CNZ_1:	BINCLUDE	"levels/objects/CNZ_1.bin"
 	ObjectLayoutBoundary
-Objects_CNZ_2:	BINCLUDE	"level/objects/CNZ_2.bin"
+Objects_CNZ_2:	BINCLUDE	"levels/objects/CNZ_2.bin"
     endif
 
 	ObjectLayoutBoundary
-Objects_CPZ_1:	BINCLUDE	"level/objects/CPZ_1.bin"
+Objects_CPZ_1:	BINCLUDE	"levels/objects/CPZ_1.bin"
 	ObjectLayoutBoundary
-Objects_CPZ_2:	BINCLUDE	"level/objects/CPZ_2.bin"
+Objects_CPZ_2:	BINCLUDE	"levels/objects/CPZ_2.bin"
 	ObjectLayoutBoundary
-Objects_DEZ_1:	BINCLUDE	"level/objects/DEZ_1.bin"
+Objects_DEZ_1:	BINCLUDE	"levels/objects/DEZ_1.bin"
 	ObjectLayoutBoundary
-Objects_DEZ_2:	BINCLUDE	"level/objects/DEZ_2.bin"
+Objects_DEZ_2:	BINCLUDE	"levels/objects/DEZ_2.bin"
 	ObjectLayoutBoundary
-Objects_ARZ_1:	BINCLUDE	"level/objects/ARZ_1.bin"
+Objects_ARZ_1:	BINCLUDE	"levels/objects/ARZ_1.bin"
 	ObjectLayoutBoundary
-Objects_ARZ_2:	BINCLUDE	"level/objects/ARZ_2.bin"
+Objects_ARZ_2:	BINCLUDE	"levels/objects/ARZ_2.bin"
 	ObjectLayoutBoundary
-Objects_SCZ_1:	BINCLUDE	"level/objects/SCZ_1.bin"
+Objects_SCZ_1:	BINCLUDE	"levels/objects/SCZ_1.bin"
 	ObjectLayoutBoundary
-Objects_SCZ_2:	BINCLUDE	"level/objects/SCZ_2.bin"
+Objects_SCZ_2:	BINCLUDE	"levels/objects/SCZ_2.bin"
 	ObjectLayoutBoundary
 Objects_Null:
 	ObjectLayoutBoundary
