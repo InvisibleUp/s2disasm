@@ -148,5 +148,5 @@ ContinueScreen_AdditionalLetters:
 ; ----------------------------------------------------------------------------
 
 ;	Objects
-	include "_inc/Objects/DA - Continue Text.asm"
-	include "_inc/Objects/DB - Continue SonicTails.asm"
+	include "_incObj/DA - Continue Text.asm"
+	include "_incObj/DB - Continue SonicTails.asm"

@@ -280,7 +280,7 @@ TwoPlayerResultsDone_SpecialStages:
 ; ===========================================================================
 
 ;	Objects
-	include "_inc/Objects/21 - 2P Results Score.asm"
+	include "_incObj/21 - 2P Results Score.asm"
 
 ; ===========================================================================
 

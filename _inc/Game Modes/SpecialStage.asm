@@ -2936,9 +2936,9 @@ SSSingleObjLoad2:
 ; ===========================================================================
 
 ;	Objects
-	include "_inc/Objects/5E - Special Stage HUD.asm"
-	include "_inc/Objects/5F - Special Stage Banner.asm"
-	include "_inc/Objects/87 - Special Stage Ring Count.asm"
+	include "_incObj/5E - Special Stage HUD.asm"
+	include "_incObj/5F - Special Stage Banner.asm"
+	include "_incObj/87 - Special Stage Ring Count.asm"
 
 ; ===========================================================================
 

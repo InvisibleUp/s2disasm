@@ -895,10 +895,10 @@ word_A874:
 ; ===========================================================================
 
 ;	Objects
-	include "_inc/Objects/CE - Ending Jumping SonicTails.asm"
-	include "_inc/Objects/CF - Ending Plane Helix.asm"	
-	include "_inc/Objects/CB - Ending Clouds.asm"
-	include "_inc/Objects/CD - Ending Birds.asm"
+	include "_incObj/CE - Ending Jumping SonicTails.asm"
+	include "_incObj/CF - Ending Plane Helix.asm"	
+	include "_incObj/CB - Ending Clouds.asm"
+	include "_incObj/CD - Ending Birds.asm"
 
 ; ===========================================================================
 
