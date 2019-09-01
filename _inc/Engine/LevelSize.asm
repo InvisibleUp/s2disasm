@@ -54,7 +54,7 @@ LevelSizeLoad:
 	move.w	#(224/2)-16,(Camera_Y_pos_bias_P2).w
 	bra.w	+
 ; ===========================================================================
-	include "levels/asm/SizeArray.asm"
+	include "levels/tables/SizeArray.asm"
 ; ===========================================================================
 +
 	tst.b	(Last_star_pole_hit).w		; was a star pole hit yet?

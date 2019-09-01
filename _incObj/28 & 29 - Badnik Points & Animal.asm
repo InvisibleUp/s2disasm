@@ -43,7 +43,7 @@ Obj28_Index:	offsetTable
 		offsetTableEntry.w Obj28_DoubleBounce	; $32
 
 ; Zone Mappings
-	include "levels/asm/Animals.asm"
+	include "levels/tables/Animals.asm"
 
 ; word_118F0:
 Obj28_Properties:

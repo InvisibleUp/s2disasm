@@ -255,7 +255,7 @@ loc_142E2:
 	rts
 
 ; Level order
-	include "levels/asm/LevelOrder.asm"
+	include "levels/tables/LevelOrder.asm"
 
 ;word_142F8:
 byte_14380:

@@ -287,7 +287,7 @@ loc_1581A:
 	move	#$2300,sr
 	rts
 ; ===========================================================================
-	include "levels/asm/TitleCards.asm"
+	include "levels/tables/TitleCards.asm"
 ; ===========================================================================
 
     if gameRevision<2

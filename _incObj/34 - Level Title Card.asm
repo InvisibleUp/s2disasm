@@ -338,4 +338,4 @@ Obj34_LoadStandardWaterAndAnimalArt:
 	bra.w	DeleteObject		; delete the title card object
 ; ===========================================================================
 
-	include "levels/asm/AnimalPLCs.asm"
+	include "levels/tables/AnimalPLCs.asm"

@@ -1,0 +1,2 @@
+Dynamic_Null:
+	rts
